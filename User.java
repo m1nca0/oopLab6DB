@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 
 public abstract class User {
-  private String id;
+  private int id;
   private String username;
   private String email;
   private String password;
@@ -9,7 +9,7 @@ public abstract class User {
   private double balance;
 
   public User(
-      String id,
+      int id,
       String username,
       String email,
       String password,
@@ -23,7 +23,7 @@ public abstract class User {
     this.balance = balance;
   }
 
-  private String getId() {
+  private int getId() {
     return id;
   }
 

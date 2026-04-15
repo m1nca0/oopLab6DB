@@ -5,7 +5,7 @@ public class Producer extends User {
   private double rating;
 
   public Producer(
-      String id,
+      int id,
       String username,
       String email,
       String password,
@@ -23,7 +23,7 @@ public class Producer extends User {
       this.artistName = artistName;
       this.rating = rating;
   }
-  
+
   private String getArtistName() {return artistName;};
   private double getRating() {return rating;};
 }

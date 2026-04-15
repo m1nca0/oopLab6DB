@@ -5,7 +5,7 @@ public class Customer extends User {
   private double rating;
 
   public Customer(
-      String id,
+      int id,
       String username,
       String email,
       String password,
