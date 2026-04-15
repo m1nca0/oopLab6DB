@@ -1,8 +1,9 @@
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Customer extends User {
   private String artistName;
-  private double rating;
+  private List<Beat> purchasedBeats;
 
   public Customer(
       int id,
@@ -20,10 +21,8 @@ public class Customer extends User {
         password,
         registrationDate,
         balance);
-      this.artistName = artistName;
-      this.rating = rating;
+      this.artistName = artistName;      
   }
   
   private String getArtistName() {return artistName;};
-  private double getRating() {return rating;};
 }

@@ -1,7 +1,8 @@
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Producer extends User {
-  private String artistName;
+  private List<Beat> uploadedBeats;
   private double rating;
 
   public Producer(
@@ -20,10 +21,8 @@ public class Producer extends User {
         password,
         registrationDate,
         balance);
-      this.artistName = artistName;
       this.rating = rating;
   }
 
-  private String getArtistName() {return artistName;};
   private double getRating() {return rating;};
 }
