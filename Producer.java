@@ -20,8 +20,10 @@ public class Producer extends User {
         password,
         registrationDate,
         balance);
-      this.rating = rating;
+    this.rating = rating;
   }
 
-  private double getRating() {return rating;};
+  private double getRating() {
+    return rating;
+  };
 }

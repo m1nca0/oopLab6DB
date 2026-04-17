@@ -1,4 +1,5 @@
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -35,4 +36,45 @@ public class BDmarket {
     System.out.println("Таблица Биты существует");
   }
 
+  public static void writeProducers(
+    String username,
+    String email,
+    String password,
+    LocalDateTime registrationDate,
+    double balance,
+    double rating
+  ) throws SQLException {
+    stab.executeUpdate(String.format("INSERT INTO producers(username, email, password, registrationDate, balance, rating) VALUES(%s, %s, %s, %s, %.2f, %.2f)", username, email, password, registrationDate, balance, rating));
+    System.out.println("Продюссер " + username + " успешно добавлен в базу данных!");
+  }
+
+  public static void writeCustomers(
+    String username,
+    String email,
+    String password,
+    LocalDateTime registrationDate,
+    double balance,
+    String artistName
+  ) throws SQLException {
+    stab.executeUpdate(String.format("INSERT INTO customers(username, email, password, registrationDate, balance, artistName) VALUES(%s, %s, %s, %s, %.2f, %s)", username, email, password, registrationDate, balance, artistName));
+    System.out.println("Артист " + username + " успешно добавлен в базу данных!");
+  }
+
+  public static void writeBeats(
+    String title,
+    Producer producer,
+    Genre genre,
+    int bpm,
+    String key,
+    String audioFile,
+    LicenseType licenseType
+  ) throws SQLException {
+    stab.executeUpdate(String.format("INSERT INTO beats(title, producer, genre, bpm, key, audioFile, licenseType) VALUES(%s, %s, %s, %i, %s, %s, %s)", title, producer.getUsername(), genre.getName(), bpm, key, audioFile, licenseType.getFormat()));
+    System.out.println("Бит " + title + " успешно добавлен в базу данных!");
+  }
+
+  public static void writeDefBeats() throws SQLException{
+    stab.executeUpdate("INSERT INTO beats(title, producer, genre, bpm, key, audioFile, licenseType) VALUES('trapchik', 'miha', 'trap', '145', 'C#-minor', 'etc', 'WAW')");
+    System.out.println("Таблица заполнена");
+  }
 }

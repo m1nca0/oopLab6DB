@@ -23,27 +23,27 @@ public abstract class User {
     this.balance = balance;
   }
 
-  private int getId() {
+  public int getId() {
     return id;
   }
 
-  private String getUsername() {
+  public String getUsername() {
     return username;
   }
 
-  private String getEmail() {
+  public String getEmail() {
     return email;
   }
 
-  private String getPassword() {
+  public String getPassword() {
     return password;
   }
 
-  private LocalDateTime getRegistrationDate() {
+  public LocalDateTime getRegistrationDate() {
     return registrationDate;
   }
 
-  private double getBalance() {
+  public double getBalance() {
     return balance;
   }
 
