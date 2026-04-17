@@ -12,8 +12,7 @@ public class Customer extends User {
       String password,
       LocalDateTime registrationDate,
       double balance,
-      String artistName,
-      double rating) {
+      String artistName) {
     super(
         id,
         username,

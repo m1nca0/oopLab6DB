@@ -12,7 +12,6 @@ public class Producer extends User {
       String password,
       LocalDateTime registrationDate,
       double balance,
-      String artistName,
       double rating) {
     super(
         id,
