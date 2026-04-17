@@ -1,11 +1,11 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public abstract class User {
   private int id;
   private String username;
   private String email;
   private String password;
-  private LocalDateTime registrationDate;
+  private LocalDate registrationDate;
   private double balance;
 
   public User(
@@ -13,7 +13,7 @@ public abstract class User {
       String username,
       String email,
       String password,
-      LocalDateTime registrationDate,
+      LocalDate registrationDate,
       double balance) {
     this.id = id;
     this.username = username;
@@ -39,7 +39,7 @@ public abstract class User {
     return password;
   }
 
-  public LocalDateTime getRegistrationDate() {
+  public LocalDate getRegistrationDate() {
     return registrationDate;
   }
 

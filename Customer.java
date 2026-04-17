@@ -1,4 +1,4 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Customer extends User {
@@ -10,7 +10,7 @@ public class Customer extends User {
       String username,
       String email,
       String password,
-      LocalDateTime registrationDate,
+      LocalDate registrationDate,
       double balance,
       String artistName) {
     super(
