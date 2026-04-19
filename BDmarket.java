@@ -77,6 +77,26 @@ public class BDmarket {
     System.out.println("Бит " + title + " успешно добавлен в базу данных!");
   }
 
+  public static void writeDB() throws SQLException {
+    stab.execute("INSERT INTO producers (username, email, password, registrationDate, balance, rating) " +
+        "VALUES ('Palaze', 'palaze@beats.com', 'pass123', '2024-01-15', 1500.50, 4.95);");
+    stab.execute("INSERT INTO producers (username, email, password, registrationDate, balance, rating) " +
+        "VALUES ('MurdaBeatz', 'murda@producer.com', 'topsecret', '2023-11-20', 12500.00, 5.00);");
+    System.out.println("Таблица Битмейкеры заполнена");
+
+    stab.execute("INSERT INTO customers (username, email, password, registrationDate, balance, artistName) " +
+        "VALUES ('young_star', 'star@mail.com', 'qwerty', '2024-03-01', 300.00, 'Lil Star');");
+    stab.execute("INSERT INTO customers (username, email, password, registrationDate, balance, artistName) " +
+        "VALUES ('og_rapper', 'og@label.com', '123456', '2024-02-10', 50.75, 'OG Flow');");
+    System.out.println("Таблица Артисты заполнена");
+
+    stab.execute("INSERT INTO beats (title, producer, genre, bpm, key, audioFile, licenseType) " +
+        "VALUES ('Midnight Vibe', 'Palaze', 'Trap', 140, 'Cm', '/audio/beats/midnight.mp3', 'Lease');");
+    stab.execute("INSERT INTO beats (title, producer, genre, bpm, key, audioFile, licenseType) " +
+        "VALUES ('Street Anthem', 'MurdaBeatz', 'Hip-Hop', 95, 'Am', '/audio/beats/street.mp3', 'Exclusive');");
+    System.out.println("Таблица Биты заполнена");
+  }
+
   public static void readBeatDB() throws SQLException {
     result = stab.executeQuery("SELECT * FROM beats;");
     while (result.next()) {
@@ -139,4 +159,10 @@ public class BDmarket {
         "INSERT INTO beats(title, producer, genre, bpm, key, audioFile, licenseType) VALUES('trapchik', 'miha', 'trap', '145', 'C#-minor', 'etc', 'WAW')");
     System.out.println("Таблица заполнена");
   }
+  public static void closeDB() throws SQLException {
+        if (result != null) result.close();
+        if (stab != null) stab.close();
+        if (market != null) market.close();
+        System.out.println("Соединения закрыты");
+    }
 }
